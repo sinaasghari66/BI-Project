@@ -14,8 +14,6 @@ This repository contains a comprehensive project involving SQL Server Integratio
 
 - **SSIS Packages**: Includes the SSIS packages used for data extraction, transformation, and loading (ETL) processes.
 - **SSAS Tabular Model Files**: Contains the SSAS tabular model files for analytical processing.
-- **DAX Scripts**: Provides the DAX scripts used for creating calculated measures and other analytical tasks.
-- **Documentation**: Detailed documentation on how to set up and use the project, including step-by-step instructions and best practices.
 
 ## Prerequisites
 
