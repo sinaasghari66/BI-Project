@@ -1,0 +1,886 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/11/2025 2:46:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GDG-ASGHARI-NB"
+  DTS:CreatorName="GI\Si.Asghari"
+  DTS:DTSID="{17DAE84E-C3DC-4721-B7B9-1F0844CE4223}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{952E6F5B-544C-4C66-AFB5-561E6CB6F045}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+      DTS:ObjectName="DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=GDG-ASGHARI-NB;User ID=sa;Initial Catalog=WWIDW;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}GDG-ASGHARI-NB.WWIDW.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAmBnHyXi8XEeKJJi14ZcPlwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbfxk87I+hOBMV9MB9qph1Ig/GEpeCKt7eA5xkoKIjvAAAAAAOgAAAAAIAACAAAABEZxr1xb5ESHTGgCc9AN1eylojo7nBD1N/gx0pkRgU7yAAAACMjYhxMMDxa7QvWivzuoLfO8pZ/Jdi+W4cHaf0u70QtUAAAAD6kBye14YsNDrZdRTbazCIgm/bz6HuvBXmGVZ6ixBBl96gKESaKWEZiL4LsmuIdkEt8/4x4nBXAV6GZVTEDADb</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE DimensionTables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{EF8B78B1-6B7D-44E6-83B3-E1EB0A8CC918}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE DimensionTables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimCustomers"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0c02c6d4-5938-4bc6-8fd7-ad7eadda45f1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimCustomers"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimCustomers]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimDeliveryMethods"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{22bfafb0-2f07-4680-871f-148b0ba2af65}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimDeliveryMethods"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimDeliveryMethods]&#xA;DBCC CHECKIDENT ('dbo.DimDeliveryMethods', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimGeo"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{46f46f2c-5fef-4248-86ba-677f587c4f90}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimGeo"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimGeo]&#xA;DBCC CHECKIDENT ('dbo.DimGeo', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimItemGroups"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{33920491-953d-4385-9800-65c14cb5c493}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimItemGroups"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimItemGroups]&#xA;DBCC CHECKIDENT ('dbo.DimItemGroups', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimItems"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d3123216-d477-4300-9ca3-259b144b8097}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimItems"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimItems]&#xA;DBCC CHECKIDENT ('dbo.DimItems', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimPaymentMethods"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5235719d-8bab-402c-ad4b-286b7f5d6190}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimPaymentMethods"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimPaymentMethods]&#xA;DBCC CHECKIDENT ('dbo.DimPaymentMethods', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimPerson"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7259029a-8c9d-4d7f-9d95-7746799d0df9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimPerson"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimPerson]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimSuppliers"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c551570f-865f-4903-9490-a300f4a3dd1c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimSuppliers"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimSuppliers]&#xA;DBCC CHECKIDENT ('dbo.DimSuppliers', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE DimensionTables\DELETE DimTransactionTypes"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bcbce3a5-a37f-4866-9dda-194eec395093}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE DimTransactionTypes"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[DimTransactionTypes]&#xA;DBCC CHECKIDENT ('dbo.DimTransactionTypes', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{98B9F68C-6AF3-42B0-9A85-004AE6473114}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimItems"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimCustomers" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{0F2DE4E0-5E2D-4550-957F-754FC6578D38}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimCustomers"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimSuppliers" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{AA9202A3-566C-41A2-8C9E-E7F54334A63F}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimSuppliers"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimGeo" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{CC86BAC4-1467-45A2-B3AF-31175CC15645}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimGeo"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimPerson" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{BDF938C3-EEE2-4B7D-9C04-145897540585}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimPerson"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimItemGroups" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{9AE08CF0-9E3D-455A-B502-D20E06AFD6A9}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimItemGroups"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimTransactionTypes" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{99BCDBD0-E4FC-4739-AFCF-141EFF8FF31E}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimTransactionTypes"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimPaymentMethods" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{BF3CA656-6F3C-481D-B922-F43179A41FA2}"
+          DTS:From="Package\TRUNCATE DimensionTables\DELETE DimPaymentMethods"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\TRUNCATE DimensionTables\DELETE DimDeliveryMethods" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE Fact Tables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{455FDAD3-DC1C-4415-8E51-584BA5AB533D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE Fact Tables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactInvoiceOrderRelation"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{75c102ab-65c4-4ff9-bb05-ac517988a91f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactInvoiceOrderRelation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[FactInvoiceOrderRelation]&#xA;DBCC CHECKIDENT ('dbo.FactInvoiceOrderRelation', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactInvoices"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f5c6e671-9e7a-4b6b-883f-bcf0319b5f0d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactInvoices"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[FactInvoices]&#xA;DBCC CHECKIDENT ('dbo.FactInvoices', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactItemGroupRelation"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bf587f50-1c14-41fc-a9da-b65650318502}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactItemGroupRelation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[FactItemGroupRelation]&#xA;DBCC CHECKIDENT ('dbo.FactItemGroupRelation', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactItemTransactions"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{edc7957a-0fcc-4432-8561-8231f255df66}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactItemTransactions"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[FactItemTransactions]&#xA;DBCC CHECKIDENT ('dbo.FactItemTransactions', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactPurchaseOrders"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{cd2e0a97-df0d-4721-880f-7270fed70b0a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactPurchaseOrders"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="delete from [dbo].[FactPurchaseOrders]&#xA;DBCC CHECKIDENT ('dbo.FactPurchaseOrders', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactSalesOrders"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e37148a0-1fa4-4963-8c48-57c9d01c212b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactSalesOrders"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[FactSalesOrders]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TRUNCATE Fact Tables\DELETE FactTransactions"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2c1592e4-a2dd-4fbf-8b97-234d3c9c08d0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE FactTransactions"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{565D710B-8420-4B47-BDE0-F6A6CD97D7E3}"
+              SQLTask:SqlStatementSource="Delete From [dbo].[FactTransactions]&#xA;DBCC CHECKIDENT ('dbo.FactTransactions', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{BEF3A708-DAA3-4E0E-B81E-77DA0492055A}"
+          DTS:From="Package\TRUNCATE Fact Tables\DELETE FactTransactions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\TRUNCATE Fact Tables\DELETE FactItemTransactions" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{143938D6-4DE6-4026-9164-1D2368616A5F}"
+          DTS:From="Package\TRUNCATE Fact Tables\DELETE FactItemTransactions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\TRUNCATE Fact Tables\DELETE FactItemGroupRelation" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{13357AC2-A10F-416A-97CE-EB659F1D4780}"
+          DTS:From="Package\TRUNCATE Fact Tables\DELETE FactItemGroupRelation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\TRUNCATE Fact Tables\DELETE FactInvoiceOrderRelation" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{907EA376-53EC-4EA4-8953-8E71BE44467C}"
+          DTS:From="Package\TRUNCATE Fact Tables\DELETE FactPurchaseOrders"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\TRUNCATE Fact Tables\DELETE FactInvoices" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{2E639DC9-4B2C-42F3-BBE9-71159397EA62}"
+          DTS:From="Package\TRUNCATE Fact Tables\DELETE FactInvoices"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\TRUNCATE Fact Tables\DELETE FactSalesOrders" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{D064818E-350D-4524-AF73-43016DE837F2}"
+          DTS:From="Package\TRUNCATE Fact Tables\DELETE FactInvoiceOrderRelation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\TRUNCATE Fact Tables\DELETE FactPurchaseOrders" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D1B3FBFE-C067-4468-B0A0-290AA05CAD24}"
+      DTS:From="Package\TRUNCATE Fact Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\TRUNCATE DimensionTables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimCustomers"
+          TopLeft="22,107.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimDeliveryMethods"
+          TopLeft="8.0000000000001,821.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimGeo"
+          TopLeft="37.5,311.5" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimItemGroups"
+          TopLeft="19.0000000000001,515.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimItems"
+          TopLeft="33,5.5" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimPaymentMethods"
+          TopLeft="6.5000000000001,719.5" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimPerson"
+          TopLeft="30.5000000000001,413.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimSuppliers"
+          TopLeft="25.5,209.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\TRUNCATE DimensionTables\DELETE DimTransactionTypes"
+          TopLeft="5.50000000000009,617.5" />
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint]"
+          TopLeft="115.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 1]"
+          TopLeft="115.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 2]"
+          TopLeft="115.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 3]"
+          TopLeft="115.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 4]"
+          TopLeft="115.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 5]"
+          TopLeft="115.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 6]"
+          TopLeft="115.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE DimensionTables.PrecedenceConstraints[Constraint 7]"
+          TopLeft="115.5,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="231,918"
+          Size="231,962"
+          Id="Package\TRUNCATE DimensionTables"
+          TopLeft="14.0000000000002,823.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactInvoices"
+          TopLeft="35.5000000000001,515.5" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactPurchaseOrders"
+          TopLeft="17.5000000000001,413.5" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactSalesOrders"
+          TopLeft="26.5000000000001,617.5" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactInvoiceOrderRelation"
+          TopLeft="5.50000000000004,311.5" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactItemGroupRelation"
+          TopLeft="10.5,209.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactItemTransactions"
+          TopLeft="14,107.5" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\TRUNCATE Fact Tables\DELETE FactTransactions"
+          TopLeft="25,5.5" />
+        <EdgeLayout
+          Id="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint]"
+          TopLeft="124,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 2]"
+          TopLeft="124,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 3]"
+          TopLeft="124,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 4]"
+          TopLeft="124,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TRUNCATE Fact Tables.PrecedenceConstraints[Constraint 5]"
+          TopLeft="124,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="248,714"
+          Size="248,758"
+          Id="Package\TRUNCATE Fact Tables"
+          TopLeft="5.50000000000011,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="129.5,763.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
