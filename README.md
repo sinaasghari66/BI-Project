@@ -23,7 +23,7 @@ To use this repository, you need to have SQL Server, SSIS, and SSAS installed. Y
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ssis-ssas-project.git
+   git clone https://github.com/sinaasghari66/BI-Project.git
 
 ## Contact
 
