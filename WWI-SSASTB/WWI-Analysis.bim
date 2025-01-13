@@ -101,7 +101,7 @@
           },
           {
             "type": "calculated",
-            "name": "ItemAmount",
+            "name": "OrderItemAmount",
             "dataType": "double",
             "isDataTypeInferred": true,
             "expression": " FactPurchaseOrders[ReceivedOuters] * FactPurchaseOrders[ExpectedUnitPricePerOuter]"
@@ -109,18 +109,115 @@
         ],
         "partitions": [
           {
-            "name": "Partition",
-            "dataView": "full",
+            "name": "PurchaseOrders2013",
             "source": {
               "type": "m",
               "expression": [
                 "let",
                 "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
-                "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data]",
+                "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20130101 and [OrderDateKey] < 20140101)",
                 "in",
-                "    dbo_FactPurchaseOrders"
+                "    #\"Filtered Rows\""
               ]
-            }
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+                  "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                  "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                  "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20130101 and [OrderDateKey] < 20140101)",
+                  "in",
+                  "    #\"Filtered Rows\"</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "PurchaseOrders2014",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20140101 and [OrderDateKey] < 20150101)",
+                "in",
+                "    #\"Filtered Rows\""
+              ]
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+                  "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                  "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                  "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20140101 and [OrderDateKey] < 20150101)",
+                  "in",
+                  "    #\"Filtered Rows\"</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "PurchaseOrders2015",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20150101 and [OrderDateKey] < 20160101)",
+                "in",
+                "    #\"Filtered Rows\""
+              ]
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+                  "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                  "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                  "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20150101 and [OrderDateKey] < 20160101)",
+                  "in",
+                  "    #\"Filtered Rows\"</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "PurchaseOrders2016andAfter",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20160101 and [OrderDateKey] < 20500101)",
+                "in",
+                "    #\"Filtered Rows\""
+              ]
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>let",
+                  "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                  "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data],",
+                  "    #\"Filtered Rows\" = Table.SelectRows(dbo_FactPurchaseOrders, each [OrderDateKey] >= 20160101 and [OrderDateKey] < 20500101)",
+                  "in",
+                  "    #\"Filtered Rows\"</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -672,6 +769,23 @@
               ]
             }
           }
+        ],
+        "hierarchies": [
+          {
+            "name": "SupplierCategoryNameHierarchy",
+            "levels": [
+              {
+                "name": "SupplierCategory",
+                "ordinal": 0,
+                "column": "SupplierCategory"
+              },
+              {
+                "name": "SupplierName",
+                "ordinal": 1,
+                "column": "SupplierName"
+              }
+            ]
+          }
         ]
       },
       {
@@ -826,7 +940,10 @@
         "measures": [
           {
             "name": "PO Average Unit Price",
-            "expression": " AVERAGE(FactPurchaseOrders[ExpectedUnitPricePerOuter])",
+            "expression": [
+              "",
+              "AVERAGE ( FactPurchaseOrders[ExpectedUnitPricePerOuter] )"
+            ],
             "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
             "displayFolder": "Averages",
             "annotations": [
@@ -838,7 +955,10 @@
           },
           {
             "name": "PO Total Order Amount",
-            "expression": " SUM(FactPurchaseOrders[ItemAmount])",
+            "expression": [
+              "",
+              "SUM ( FactPurchaseOrders[OrderItemAmount] )"
+            ],
             "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
             "displayFolder": "Totals",
             "annotations": [
@@ -850,30 +970,46 @@
           },
           {
             "name": "PO Total Item Recieved Quantity",
-            "expression": " SUM(FactPurchaseOrders[ReceivedOuters])",
+            "expression": [
+              "",
+              "SUM ( FactPurchaseOrders[ReceivedOuters] )"
+            ],
             "formatString": "#,0",
             "displayFolder": "Totals"
           },
           {
             "name": "PO Total Item Ordered Quantity",
-            "expression": " SUM(FactPurchaseOrders[OrderedOuters])",
+            "expression": [
+              "",
+              "SUM ( FactPurchaseOrders[OrderedOuters] )"
+            ],
             "formatString": "#,0",
             "displayFolder": "Totals"
           },
           {
             "name": "Total PO",
             "expression": [
-              " ",
-              "    DISTINCTCOUNT(FactPurchaseOrders[PurchaseOrderAlternateKey])"
+              "",
+              "DISTINCTCOUNT ( FactPurchaseOrders[PurchaseOrderAlternateKey] )"
             ],
             "formatString": "#,0",
             "displayFolder": "Totals"
           },
           {
             "name": "Total PO Items",
-            "expression": " COUNTROWS(FactPurchaseOrders)",
+            "expression": [
+              "",
+              "COUNTROWS ( FactPurchaseOrders )"
+            ],
             "formatString": "#,0",
             "displayFolder": "Totals"
+          },
+          {
+            "name": "Total Suppliers",
+            "expression": [
+              "",
+              "COUNTROWS ( DimSuppliers )"
+            ]
           }
         ]
       }
