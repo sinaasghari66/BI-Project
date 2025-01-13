@@ -101,7 +101,7 @@
           },
           {
             "type": "calculated",
-            "name": "Order Amount",
+            "name": "ItemAmount",
             "dataType": "double",
             "isDataTypeInferred": true,
             "expression": " FactPurchaseOrders[ReceivedOuters] * FactPurchaseOrders[ExpectedUnitPricePerOuter]"
@@ -122,48 +122,11 @@
               ]
             }
           }
-        ],
-        "measures": [
-          {
-            "name": "Total Item Ordered Quantity",
-            "expression": " SUM(FactPurchaseOrders[OrderedOuters])",
-            "formatString": "#,0",
-            "displayFolder": "_TotalMeasures"
-          },
-          {
-            "name": "Total Item Recieved Quantity",
-            "expression": " SUM(FactPurchaseOrders[ReceivedOuters])",
-            "formatString": "#,0",
-            "displayFolder": "_TotalMeasures"
-          },
-          {
-            "name": "Total Order Amount",
-            "expression": " SUM(FactPurchaseOrders[Order Amount])",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "displayFolder": "_TotalMeasures",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "Average Unit Price",
-            "expression": " AVERAGE(FactPurchaseOrders[ExpectedUnitPricePerOuter])",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "displayFolder": "_AverageMeasures",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          }
         ]
       },
       {
         "name": "DimDate",
+        "dataCategory": "Time",
         "columns": [
           {
             "name": "DateKey",
@@ -173,6 +136,7 @@
           {
             "name": "Date",
             "dataType": "dateTime",
+            "isKey": true,
             "sourceColumn": "Date"
           },
           {
@@ -825,6 +789,93 @@
             }
           }
         ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Date]"
+          },
+          {
+            "type": "calculated",
+            "name": "Measure",
+            "dataType": "int64",
+            "isDataTypeInferred": true
+          },
+          {
+            "type": "calculated",
+            "name": "Description",
+            "dataType": "int64",
+            "isDataTypeInferred": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": " SELECTCOLUMNS( CALENDAR( \"2025-01-01\", \"2025-01-01\" ), \"Date\", [Date] )"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "PO Average Unit Price",
+            "expression": " AVERAGE(FactPurchaseOrders[ExpectedUnitPricePerOuter])",
+            "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
+            "displayFolder": "Averages",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"1\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "PO Total Order Amount",
+            "expression": " SUM(FactPurchaseOrders[ItemAmount])",
+            "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
+            "displayFolder": "Totals",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"1\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "PO Total Item Recieved Quantity",
+            "expression": " SUM(FactPurchaseOrders[ReceivedOuters])",
+            "formatString": "#,0",
+            "displayFolder": "Totals"
+          },
+          {
+            "name": "PO Total Item Ordered Quantity",
+            "expression": " SUM(FactPurchaseOrders[OrderedOuters])",
+            "formatString": "#,0",
+            "displayFolder": "Totals"
+          },
+          {
+            "name": "Total PO",
+            "expression": [
+              " ",
+              "    DISTINCTCOUNT(FactPurchaseOrders[PurchaseOrderAlternateKey])"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "Totals"
+          },
+          {
+            "name": "Total PO Items",
+            "expression": " COUNTROWS(FactPurchaseOrders)",
+            "formatString": "#,0",
+            "displayFolder": "Totals"
+          }
+        ]
       }
     ],
     "relationships": [
@@ -842,14 +893,6 @@
         "fromColumn": "LastReceiptDateKey",
         "toTable": "DimDate",
         "toColumn": "DateKey",
-        "isActive": false
-      },
-      {
-        "name": "48cd46d6-bfce-42b0-a9e4-a2baef93748e",
-        "fromTable": "FactPurchaseOrders",
-        "fromColumn": "SupplierKey",
-        "toTable": "DimSuppliers",
-        "toColumn": "SupplierKey",
         "isActive": false
       },
       {
@@ -882,11 +925,19 @@
         "toColumn": "PersonKey"
       },
       {
-        "name": "d28c4246-48a0-4db4-b372-b8796608155f",
+        "name": "2473b830-ada8-4771-aeb8-10304dd1af20",
         "fromTable": "DimSuppliers",
         "fromColumn": "PrimaryContactPersonKey",
         "toTable": "DimPerson",
-        "toColumn": "PersonKey"
+        "toColumn": "PersonKey",
+        "isActive": false
+      },
+      {
+        "name": "0718298a-4602-4cc1-8d51-df696a6e791a",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "SupplierKey",
+        "toTable": "DimSuppliers",
+        "toColumn": "SupplierKey"
       }
     ],
     "annotations": [
