@@ -926,6 +926,12 @@
             "name": "Description",
             "dataType": "int64",
             "isDataTypeInferred": true
+          },
+          {
+            "type": "calculated",
+            "name": "ReferenceTable",
+            "dataType": "int64",
+            "isDataTypeInferred": true
           }
         ],
         "partitions": [
@@ -1010,6 +1016,14 @@
               "",
               "COUNTROWS ( DimSuppliers )"
             ]
+          },
+          {
+            "name": "Total Items",
+            "expression": " COUNTROWS(DimItems)"
+          },
+          {
+            "name": "Total Person",
+            "expression": " COUNTROWS(DimPerson)"
           }
         ]
       }
