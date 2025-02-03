@@ -5,8 +5,6 @@ VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "WWI-ETL", "WWI-ETL\WWI-ETL.dtproj", "{55B87C0B-FB5E-4F08-85A2-E0CA5792F1A6}"
 EndProject
-Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "WWI-TB", "WWI-SSASTB\WWI-TB.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|x86 = Development|x86
@@ -14,9 +12,6 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{55B87C0B-FB5E-4F08-85A2-E0CA5792F1A6}.Development|x86.ActiveCfg = Development
 		{55B87C0B-FB5E-4F08-85A2-E0CA5792F1A6}.Development|x86.Build.0 = Development
-		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.ActiveCfg = Development|x86
-		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Build.0 = Development|x86
-		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Deploy.0 = Development|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
