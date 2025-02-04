@@ -1,0 +1,1399 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/GDG-ASGHARI-NB;WWIDW",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "GDG-ASGHARI-NB",
+            "database": "WWIDW"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "Windows",
+          "kind": "SQL",
+          "path": "gdg-asghari-nb;WWIDW",
+          "Username": "GI\\si.asghari",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date"
+          },
+          {
+            "name": "FullDate",
+            "dataType": "string",
+            "sourceColumn": "FullDate"
+          },
+          {
+            "name": "DayOfMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfMonth"
+          },
+          {
+            "name": "DaySuffix",
+            "dataType": "string",
+            "sourceColumn": "DaySuffix"
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeek"
+          },
+          {
+            "name": "DayOfWeekInMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInMonth"
+          },
+          {
+            "name": "DayOfWeekInYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInYear"
+          },
+          {
+            "name": "DayOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "DayOfQuarter"
+          },
+          {
+            "name": "DayOfYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfYear"
+          },
+          {
+            "name": "WeekOfMonth",
+            "dataType": "string",
+            "sourceColumn": "WeekOfMonth"
+          },
+          {
+            "name": "WeekOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "WeekOfQuarter"
+          },
+          {
+            "name": "WeekOfYear",
+            "dataType": "string",
+            "sourceColumn": "WeekOfYear"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sortByColumn": "Month"
+          },
+          {
+            "name": "MonthOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "MonthOfQuarter"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter"
+          },
+          {
+            "name": "QuarterName",
+            "dataType": "string",
+            "sourceColumn": "QuarterName",
+            "sortByColumn": "Quarter"
+          },
+          {
+            "name": "Year",
+            "dataType": "string",
+            "sourceColumn": "Year"
+          },
+          {
+            "name": "YearName",
+            "dataType": "string",
+            "sourceColumn": "YearName"
+          },
+          {
+            "name": "MonthYear",
+            "dataType": "string",
+            "sourceColumn": "MonthYear"
+          },
+          {
+            "name": "MMYYYY",
+            "dataType": "string",
+            "sourceColumn": "MMYYYY"
+          },
+          {
+            "name": "FirstDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfMonth"
+          },
+          {
+            "name": "LastDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfMonth"
+          },
+          {
+            "name": "FirstDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfQuarter"
+          },
+          {
+            "name": "LastDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfQuarter"
+          },
+          {
+            "name": "FirstDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfYear"
+          },
+          {
+            "name": "LastDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfYear"
+          },
+          {
+            "name": "IsHoliday",
+            "dataType": "boolean",
+            "sourceColumn": "IsHoliday"
+          },
+          {
+            "name": "IsWeekday",
+            "dataType": "boolean",
+            "sourceColumn": "IsWeekday"
+          },
+          {
+            "name": "HolidayName",
+            "dataType": "string",
+            "sourceColumn": "HolidayName"
+          },
+          {
+            "name": "FiscalDayOfYear",
+            "dataType": "string",
+            "sourceColumn": "FiscalDayOfYear"
+          },
+          {
+            "name": "FiscalWeekOfYear",
+            "dataType": "string",
+            "sourceColumn": "FiscalWeekOfYear"
+          },
+          {
+            "name": "FiscalMonth",
+            "dataType": "string",
+            "sourceColumn": "FiscalMonth"
+          },
+          {
+            "name": "FiscalQuarter",
+            "dataType": "string",
+            "sourceColumn": "FiscalQuarter"
+          },
+          {
+            "name": "FiscalQuarterName",
+            "dataType": "string",
+            "sourceColumn": "FiscalQuarterName"
+          },
+          {
+            "name": "FiscalYear",
+            "dataType": "string",
+            "sourceColumn": "FiscalYear"
+          },
+          {
+            "name": "FiscalYearName",
+            "dataType": "string",
+            "sourceColumn": "FiscalYearName"
+          },
+          {
+            "name": "FiscalMonthYear",
+            "dataType": "string",
+            "sourceColumn": "FiscalMonthYear"
+          },
+          {
+            "name": "FiscalMMYYYY",
+            "dataType": "string",
+            "sourceColumn": "FiscalMMYYYY"
+          },
+          {
+            "name": "FiscalFirstDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "FiscalFirstDayOfMonth"
+          },
+          {
+            "name": "FiscalLastDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "FiscalLastDayOfMonth"
+          },
+          {
+            "name": "FiscalFirstDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "FiscalFirstDayOfQuarter"
+          },
+          {
+            "name": "FiscalLastDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "FiscalLastDayOfQuarter"
+          },
+          {
+            "name": "FiscalFirstDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "FiscalFirstDayOfYear"
+          },
+          {
+            "name": "FiscalLastDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "FiscalLastDayOfYear"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_DimDate = Source{[Schema=\"dbo\",Item=\"DimDate\"]}[Data]",
+                "in",
+                "    dbo_DimDate"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimCustomers",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "CustomerAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerAlternateKey"
+          },
+          {
+            "name": "CustomerName",
+            "dataType": "string",
+            "sourceColumn": "CustomerName"
+          },
+          {
+            "name": "BillToCustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "BillToCustomerKey"
+          },
+          {
+            "name": "BillToCustomerAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "BillToCustomerAlternateKey"
+          },
+          {
+            "name": "CustomerCategory",
+            "dataType": "string",
+            "sourceColumn": "CustomerCategory"
+          },
+          {
+            "name": "BuyingGroup",
+            "dataType": "string",
+            "sourceColumn": "BuyingGroup"
+          },
+          {
+            "name": "PrimaryContactPersonKey",
+            "dataType": "int64",
+            "sourceColumn": "PrimaryContactPersonKey"
+          },
+          {
+            "name": "AlternateContactPersonKey",
+            "dataType": "int64",
+            "sourceColumn": "AlternateContactPersonKey"
+          },
+          {
+            "name": "GeoKey",
+            "dataType": "int64",
+            "sourceColumn": "GeoKey"
+          },
+          {
+            "name": "DeliveryMethodKey",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryMethodKey"
+          },
+          {
+            "name": "CreditLimit",
+            "dataType": "double",
+            "sourceColumn": "CreditLimit"
+          },
+          {
+            "name": "AccountOpenedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "AccountOpenedDate"
+          },
+          {
+            "name": "StandardDiscountPercentage",
+            "dataType": "double",
+            "sourceColumn": "StandardDiscountPercentage"
+          },
+          {
+            "name": "IsStatementSent",
+            "dataType": "boolean",
+            "sourceColumn": "IsStatementSent"
+          },
+          {
+            "name": "IsOnCreditHold",
+            "dataType": "boolean",
+            "sourceColumn": "IsOnCreditHold"
+          },
+          {
+            "name": "PaymentDays",
+            "dataType": "int64",
+            "sourceColumn": "PaymentDays"
+          },
+          {
+            "name": "PhoneNumber",
+            "dataType": "string",
+            "sourceColumn": "PhoneNumber"
+          },
+          {
+            "name": "FaxNumber",
+            "dataType": "string",
+            "sourceColumn": "FaxNumber"
+          },
+          {
+            "name": "DeliveryRun",
+            "dataType": "string",
+            "sourceColumn": "DeliveryRun"
+          },
+          {
+            "name": "RunPosition",
+            "dataType": "string",
+            "sourceColumn": "RunPosition"
+          },
+          {
+            "name": "WebsiteURL",
+            "dataType": "string",
+            "sourceColumn": "WebsiteURL"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_DimCustomers = Source{[Schema=\"dbo\",Item=\"DimCustomers\"]}[Data]",
+                "in",
+                "    dbo_DimCustomers"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimGeo",
+        "columns": [
+          {
+            "name": "GeoKey",
+            "dataType": "int64",
+            "sourceColumn": "GeoKey"
+          },
+          {
+            "name": "GeoReferenceAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "GeoReferenceAlternateKey"
+          },
+          {
+            "name": "GeoReferenceType",
+            "dataType": "string",
+            "sourceColumn": "GeoReferenceType"
+          },
+          {
+            "name": "GeoReferenceName",
+            "dataType": "string",
+            "sourceColumn": "GeoReferenceName"
+          },
+          {
+            "name": "DeliveryCity",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCity"
+          },
+          {
+            "name": "DeliveryStateProvince",
+            "dataType": "string",
+            "sourceColumn": "DeliveryStateProvince"
+          },
+          {
+            "name": "DeliveryStateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "DeliveryStateProvinceCode"
+          },
+          {
+            "name": "DeliveryStateProvinceSalesTerritory",
+            "dataType": "string",
+            "sourceColumn": "DeliveryStateProvinceSalesTerritory"
+          },
+          {
+            "name": "DeliveryStateProvinceLatestRecordedPopulation",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryStateProvinceLatestRecordedPopulation"
+          },
+          {
+            "name": "DeliveryCountry",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountry"
+          },
+          {
+            "name": "DeliveryCountryFormalName",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountryFormalName"
+          },
+          {
+            "name": "DeliveryCountryIsoAlpha3Code",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountryIsoAlpha3Code"
+          },
+          {
+            "name": "DeliveryCountryIsoNumericCode",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryCountryIsoNumericCode"
+          },
+          {
+            "name": "DeliveryCountryType",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountryType"
+          },
+          {
+            "name": "DeliveryCountryLatestRecordedPopulation",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryCountryLatestRecordedPopulation"
+          },
+          {
+            "name": "DeliveryCountryContinent",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountryContinent"
+          },
+          {
+            "name": "DeliveryCountryRegion",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountryRegion"
+          },
+          {
+            "name": "DeliveryCountrySubregion",
+            "dataType": "string",
+            "sourceColumn": "DeliveryCountrySubregion"
+          },
+          {
+            "name": "PostalCity",
+            "dataType": "string",
+            "sourceColumn": "PostalCity"
+          },
+          {
+            "name": "PostalStateProvince",
+            "dataType": "string",
+            "sourceColumn": "PostalStateProvince"
+          },
+          {
+            "name": "PostalStateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "PostalStateProvinceCode"
+          },
+          {
+            "name": "PostalStateProvinceSalesTerritory",
+            "dataType": "string",
+            "sourceColumn": "PostalStateProvinceSalesTerritory"
+          },
+          {
+            "name": "PostalStateProvinceLatestRecordedPopulation",
+            "dataType": "int64",
+            "sourceColumn": "PostalStateProvinceLatestRecordedPopulation"
+          },
+          {
+            "name": "PostalCountry",
+            "dataType": "string",
+            "sourceColumn": "PostalCountry"
+          },
+          {
+            "name": "PostalCountryFormalName",
+            "dataType": "string",
+            "sourceColumn": "PostalCountryFormalName"
+          },
+          {
+            "name": "PostalCountryIsoAlpha3Code",
+            "dataType": "string",
+            "sourceColumn": "PostalCountryIsoAlpha3Code"
+          },
+          {
+            "name": "PostalCountryIsoNumericCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCountryIsoNumericCode"
+          },
+          {
+            "name": "PostalCountryType",
+            "dataType": "string",
+            "sourceColumn": "PostalCountryType"
+          },
+          {
+            "name": "PostalCountryLatestRecordedPopulation",
+            "dataType": "int64",
+            "sourceColumn": "PostalCountryLatestRecordedPopulation"
+          },
+          {
+            "name": "PostalCountryContinent",
+            "dataType": "string",
+            "sourceColumn": "PostalCountryContinent"
+          },
+          {
+            "name": "PostalCountryRegion",
+            "dataType": "string",
+            "sourceColumn": "PostalCountryRegion"
+          },
+          {
+            "name": "PostalCountrySubregion",
+            "dataType": "string",
+            "sourceColumn": "PostalCountrySubregion"
+          },
+          {
+            "name": "DeliveryAddressLine1",
+            "dataType": "string",
+            "sourceColumn": "DeliveryAddressLine1"
+          },
+          {
+            "name": "DeliveryAddressLine2",
+            "dataType": "string",
+            "sourceColumn": "DeliveryAddressLine2"
+          },
+          {
+            "name": "DeliveryPostalCode",
+            "dataType": "string",
+            "sourceColumn": "DeliveryPostalCode"
+          },
+          {
+            "name": "PostalAddressLine1",
+            "dataType": "string",
+            "sourceColumn": "PostalAddressLine1"
+          },
+          {
+            "name": "PostalAddressLine2",
+            "dataType": "string",
+            "sourceColumn": "PostalAddressLine2"
+          },
+          {
+            "name": "PostalPostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalPostalCode"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_DimGeo = Source{[Schema=\"dbo\",Item=\"DimGeo\"]}[Data]",
+                "in",
+                "    dbo_DimGeo"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimItems",
+        "columns": [
+          {
+            "name": "ItemKey",
+            "dataType": "int64",
+            "sourceColumn": "ItemKey"
+          },
+          {
+            "name": "ItemAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "ItemAlternateKey"
+          },
+          {
+            "name": "ItemName",
+            "dataType": "string",
+            "sourceColumn": "ItemName"
+          },
+          {
+            "name": "SupplierKey",
+            "dataType": "int64",
+            "sourceColumn": "SupplierKey"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color"
+          },
+          {
+            "name": "UnitPackage",
+            "dataType": "string",
+            "sourceColumn": "UnitPackage"
+          },
+          {
+            "name": "OuterPackage",
+            "dataType": "string",
+            "sourceColumn": "OuterPackage"
+          },
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size"
+          },
+          {
+            "name": "QuantityOnHand",
+            "dataType": "int64",
+            "sourceColumn": "QuantityOnHand"
+          },
+          {
+            "name": "BinLocation",
+            "dataType": "string",
+            "sourceColumn": "BinLocation"
+          },
+          {
+            "name": "LastStocktakeQuantity",
+            "dataType": "int64",
+            "sourceColumn": "LastStocktakeQuantity"
+          },
+          {
+            "name": "LastCostPrice",
+            "dataType": "double",
+            "sourceColumn": "LastCostPrice"
+          },
+          {
+            "name": "ReorderLevel",
+            "dataType": "int64",
+            "sourceColumn": "ReorderLevel"
+          },
+          {
+            "name": "TargetStockLevel",
+            "dataType": "int64",
+            "sourceColumn": "TargetStockLevel"
+          },
+          {
+            "name": "LeadTimeDays",
+            "dataType": "int64",
+            "sourceColumn": "LeadTimeDays"
+          },
+          {
+            "name": "QuantityPerOuter",
+            "dataType": "int64",
+            "sourceColumn": "QuantityPerOuter"
+          },
+          {
+            "name": "IsChillerStock",
+            "dataType": "boolean",
+            "sourceColumn": "IsChillerStock"
+          },
+          {
+            "name": "Barcode",
+            "dataType": "string",
+            "sourceColumn": "Barcode"
+          },
+          {
+            "name": "TaxRate",
+            "dataType": "double",
+            "sourceColumn": "TaxRate"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice"
+          },
+          {
+            "name": "RecommendedRetailPrice",
+            "dataType": "double",
+            "sourceColumn": "RecommendedRetailPrice"
+          },
+          {
+            "name": "TypicalWeightPerUnit",
+            "dataType": "double",
+            "sourceColumn": "TypicalWeightPerUnit"
+          },
+          {
+            "name": "MarketingComments",
+            "dataType": "string",
+            "sourceColumn": "MarketingComments"
+          },
+          {
+            "name": "InternalComments",
+            "dataType": "string",
+            "sourceColumn": "InternalComments"
+          },
+          {
+            "name": "CountryOfManufacture",
+            "dataType": "string",
+            "sourceColumn": "CountryOfManufacture"
+          },
+          {
+            "name": "SearchDetails",
+            "dataType": "string",
+            "sourceColumn": "SearchDetails"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_DimItems = Source{[Schema=\"dbo\",Item=\"DimItems\"]}[Data]",
+                "in",
+                "    dbo_DimItems"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimPerson",
+        "columns": [
+          {
+            "name": "PersonKey",
+            "dataType": "int64",
+            "sourceColumn": "PersonKey"
+          },
+          {
+            "name": "PersonParentKey",
+            "dataType": "int64",
+            "sourceColumn": "PersonParentKey"
+          },
+          {
+            "name": "PersonAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "PersonAlternateKey"
+          },
+          {
+            "name": "PersonParentAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "PersonParentAlternateKey"
+          },
+          {
+            "name": "FullName",
+            "dataType": "string",
+            "sourceColumn": "FullName"
+          },
+          {
+            "name": "PreferredName",
+            "dataType": "string",
+            "sourceColumn": "PreferredName"
+          },
+          {
+            "name": "SearchName",
+            "dataType": "string",
+            "sourceColumn": "SearchName"
+          },
+          {
+            "name": "IsPermittedToLogon",
+            "dataType": "boolean",
+            "sourceColumn": "IsPermittedToLogon"
+          },
+          {
+            "name": "LogonName",
+            "dataType": "string",
+            "sourceColumn": "LogonName"
+          },
+          {
+            "name": "IsExternalLogonProvider",
+            "dataType": "boolean",
+            "sourceColumn": "IsExternalLogonProvider"
+          },
+          {
+            "name": "IsSystemUser",
+            "dataType": "boolean",
+            "sourceColumn": "IsSystemUser"
+          },
+          {
+            "name": "IsEmployee",
+            "dataType": "boolean",
+            "sourceColumn": "IsEmployee"
+          },
+          {
+            "name": "EmployeePosition",
+            "dataType": "string",
+            "sourceColumn": "EmployeePosition"
+          },
+          {
+            "name": "IsSalesperson",
+            "dataType": "boolean",
+            "sourceColumn": "IsSalesperson"
+          },
+          {
+            "name": "PhoneNumber",
+            "dataType": "string",
+            "sourceColumn": "PhoneNumber"
+          },
+          {
+            "name": "FaxNumber",
+            "dataType": "string",
+            "sourceColumn": "FaxNumber"
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_DimPerson = Source{[Schema=\"dbo\",Item=\"DimPerson\"]}[Data]",
+                "in",
+                "    dbo_DimPerson"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactPurchaseOrders",
+        "columns": [
+          {
+            "name": "PurchaseOrderKey",
+            "dataType": "int64",
+            "sourceColumn": "PurchaseOrderKey"
+          },
+          {
+            "name": "PurchaseOrderAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "PurchaseOrderAlternateKey"
+          },
+          {
+            "name": "PurchaseOrderLineAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "PurchaseOrderLineAlternateKey"
+          },
+          {
+            "name": "SupplierKey",
+            "dataType": "int64",
+            "sourceColumn": "SupplierKey"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "sourceColumn": "OrderDateKey"
+          },
+          {
+            "name": "ContactPersonKey",
+            "dataType": "int64",
+            "sourceColumn": "ContactPersonKey"
+          },
+          {
+            "name": "ExpectedDeliveryDateKey",
+            "dataType": "int64",
+            "sourceColumn": "ExpectedDeliveryDateKey"
+          },
+          {
+            "name": "IsOrderFinalized",
+            "dataType": "boolean",
+            "sourceColumn": "IsOrderFinalized"
+          },
+          {
+            "name": "ItemKey",
+            "dataType": "int64",
+            "sourceColumn": "ItemKey"
+          },
+          {
+            "name": "OrderedOuters",
+            "dataType": "int64",
+            "sourceColumn": "OrderedOuters"
+          },
+          {
+            "name": "ReceivedOuters",
+            "dataType": "int64",
+            "sourceColumn": "ReceivedOuters"
+          },
+          {
+            "name": "ExpectedUnitPricePerOuter",
+            "dataType": "double",
+            "sourceColumn": "ExpectedUnitPricePerOuter"
+          },
+          {
+            "name": "LastReceiptDateKey",
+            "dataType": "int64",
+            "sourceColumn": "LastReceiptDateKey"
+          },
+          {
+            "name": "IsOrderLineFinalized",
+            "dataType": "boolean",
+            "sourceColumn": "IsOrderLineFinalized"
+          },
+          {
+            "type": "calculated",
+            "name": "OrderItemAmount",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "FactPurchaseOrders[OrderedOuters] * FactPurchaseOrders[ExpectedUnitPricePerOuter]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_FactPurchaseOrders = Source{[Schema=\"dbo\",Item=\"FactPurchaseOrders\"]}[Data]",
+                "in",
+                "    dbo_FactPurchaseOrders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSuppliers",
+        "columns": [
+          {
+            "name": "SupplierKey",
+            "dataType": "int64",
+            "sourceColumn": "SupplierKey"
+          },
+          {
+            "name": "SupplierAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "SupplierAlternateKey"
+          },
+          {
+            "name": "SupplierName",
+            "dataType": "string",
+            "sourceColumn": "SupplierName"
+          },
+          {
+            "name": "SupplierCategory",
+            "dataType": "string",
+            "sourceColumn": "SupplierCategory"
+          },
+          {
+            "name": "PrimaryContactPersonKey",
+            "dataType": "int64",
+            "sourceColumn": "PrimaryContactPersonKey"
+          },
+          {
+            "name": "AlternateContactPersonKey",
+            "dataType": "int64",
+            "sourceColumn": "AlternateContactPersonKey"
+          },
+          {
+            "name": "GeoKey",
+            "dataType": "int64",
+            "sourceColumn": "GeoKey"
+          },
+          {
+            "name": "DeliveryMethodKey",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryMethodKey"
+          },
+          {
+            "name": "SupplierReference",
+            "dataType": "string",
+            "sourceColumn": "SupplierReference"
+          },
+          {
+            "name": "BankAccountName",
+            "dataType": "string",
+            "sourceColumn": "BankAccountName"
+          },
+          {
+            "name": "BankAccountBranch",
+            "dataType": "string",
+            "sourceColumn": "BankAccountBranch"
+          },
+          {
+            "name": "BankAccountCode",
+            "dataType": "string",
+            "sourceColumn": "BankAccountCode"
+          },
+          {
+            "name": "BankAccountNumber",
+            "dataType": "string",
+            "sourceColumn": "BankAccountNumber"
+          },
+          {
+            "name": "BankInternationalCode",
+            "dataType": "string",
+            "sourceColumn": "BankInternationalCode"
+          },
+          {
+            "name": "PaymentDays",
+            "dataType": "int64",
+            "sourceColumn": "PaymentDays"
+          },
+          {
+            "name": "InternalComments",
+            "dataType": "string",
+            "sourceColumn": "InternalComments"
+          },
+          {
+            "name": "PhoneNumber",
+            "dataType": "string",
+            "sourceColumn": "PhoneNumber"
+          },
+          {
+            "name": "FaxNumber",
+            "dataType": "string",
+            "sourceColumn": "FaxNumber"
+          },
+          {
+            "name": "WebsiteURL",
+            "dataType": "string",
+            "sourceColumn": "WebsiteURL"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/GDG-ASGHARI-NB;WWIDW\",",
+                "    dbo_DimSuppliers = Source{[Schema=\"dbo\",Item=\"DimSuppliers\"]}[Data]",
+                "in",
+                "    dbo_DimSuppliers"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Measure",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZMeasure",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "[ZMeasure]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZDesc",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "[ZDesc]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                " ",
+                "DATATABLE(",
+                "    \"ZMeasure\", STRING,",
+                "    \"ZDesc\", STRING,",
+                "    {",
+                "        {\"\", \"\"}",
+                "}",
+                ")"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "PO Total Order Amount",
+            "expression": [
+              "",
+              "SUM ( FactPurchaseOrders[OrderItemAmount] )"
+            ],
+            "formatString": "#,0.0",
+            "displayFolder": "PurchaseOrders\\Total"
+          },
+          {
+            "name": "PO Total Item Ordered Quantity",
+            "expression": [
+              "",
+              "SUM ( FactPurchaseOrders[OrderedOuters] )"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "PurchaseOrders\\Total"
+          },
+          {
+            "name": "PO Average Unit Price",
+            "expression": [
+              "",
+              "AVERAGE ( FactPurchaseOrders[ExpectedUnitPricePerOuter] )"
+            ],
+            "formatString": "#,0.0",
+            "displayFolder": "PurchaseOrders\\Average"
+          },
+          {
+            "name": "Total PO",
+            "expression": [
+              "",
+              "DISTINCTCOUNT ( FactPurchaseOrders[PurchaseOrderAlternateKey] )"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "PurchaseOrders\\Total"
+          },
+          {
+            "name": "Total PO Items",
+            "expression": [
+              "",
+              "COUNTROWS ( FactPurchaseOrders )"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "PurchaseOrders\\Total"
+          },
+          {
+            "name": "PO Total Item Recieved Quantity",
+            "expression": [
+              "",
+              "SUM ( FactPurchaseOrders[ReceivedOuters] )"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "PurchaseOrders\\Total"
+          },
+          {
+            "name": "Total Suppliers",
+            "expression": [
+              "",
+              "COUNTROWS ( DimSuppliers )"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "Suppliers\\Total"
+          },
+          {
+            "name": "Total Items",
+            "expression": " COUNTROWS(DimItems)",
+            "formatString": "#,0",
+            "displayFolder": "Items\\Total"
+          },
+          {
+            "name": "Total Person",
+            "expression": " COUNTROWS(DimPerson)",
+            "formatString": "#,0",
+            "displayFolder": "Person"
+          },
+          {
+            "name": "Max Yearly Amount PO",
+            "expression": " CALCULATE(MAXX(VALUES(DimDate[Year]),[PO Total Order Amount]),ALLEXCEPT(FactPurchaseOrders,FactPurchaseOrders[OrderDateKey]))",
+            "formatString": "#,0.0",
+            "displayFolder": "PurchaseOrders\\MinMax"
+          },
+          {
+            "name": "Max Yearly Amount PO Point",
+            "expression": [
+              " ",
+              "    VAR _max = [Max Yearly Amount PO]",
+              "    VAR _Result = IF([PO Total Order Amount] = _max,_max,BLANK())",
+              "    RETURN _Result"
+            ],
+            "formatString": "#,0.0",
+            "displayFolder": "PurchaseOrders\\MinMax"
+          },
+          {
+            "name": "Min Yearly Amount PO",
+            "expression": " CALCULATE(MINX(VALUES(DimDate[Year]),[PO Total Order Amount]),ALLEXCEPT(FactPurchaseOrders,FactPurchaseOrders[OrderDateKey]))",
+            "formatString": "#,0.0",
+            "displayFolder": "PurchaseOrders\\MinMax"
+          },
+          {
+            "name": "Min Yearly Amount PO Point",
+            "expression": [
+              " ",
+              "    VAR _min = [Min Yearly Amount PO]",
+              "    VAR _Result = IF([PO Total Order Amount] = _min,_min,BLANK())",
+              "    RETURN _Result"
+            ],
+            "formatString": "#,0.0",
+            "displayFolder": "PurchaseOrders\\MinMax"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "f0485851-b96b-4568-b049-fc4159890d37",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "ExpectedDeliveryDateKey",
+        "toTable": "DimDate",
+        "toColumn": "DateKey",
+        "isActive": false
+      },
+      {
+        "name": "556e2a0a-5e0c-438e-98ad-ae7a0a3efd51",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "LastReceiptDateKey",
+        "toTable": "DimDate",
+        "toColumn": "DateKey",
+        "isActive": false
+      },
+      {
+        "name": "e3ad0c97-84be-4a29-90fa-073a6c277d93",
+        "fromTable": "DimCustomers",
+        "fromColumn": "PrimaryContactPersonKey",
+        "toTable": "DimPerson",
+        "toColumn": "PersonKey"
+      },
+      {
+        "name": "9ee31c7f-6c37-4432-88f4-31c74ed1b7bb",
+        "fromTable": "DimSuppliers",
+        "fromColumn": "GeoKey",
+        "toTable": "DimGeo",
+        "toColumn": "GeoKey"
+      },
+      {
+        "name": "ef68c457-009c-4ac2-a2ae-3bae60f1949b",
+        "fromTable": "DimItems",
+        "fromColumn": "SupplierKey",
+        "toTable": "DimSuppliers",
+        "toColumn": "SupplierKey",
+        "isActive": false
+      },
+      {
+        "name": "eca2eb33-5652-4495-8413-769975e8c42e",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "SupplierKey",
+        "toTable": "DimSuppliers",
+        "toColumn": "SupplierKey",
+        "isActive": false
+      },
+      {
+        "name": "44536510-382d-4791-8625-7901f742801c",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "OrderDateKey",
+        "toTable": "DimDate",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "6e175ccb-9941-4483-b7c6-2bf1ec7a67a9",
+        "fromTable": "DimCustomers",
+        "fromColumn": "GeoKey",
+        "toTable": "DimGeo",
+        "toColumn": "GeoKey"
+      },
+      {
+        "name": "7f2b43ed-e574-4f99-bd91-7c41d0c6ecec",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "ItemKey",
+        "toTable": "DimItems",
+        "toColumn": "ItemKey"
+      },
+      {
+        "name": "304293f3-c55f-479b-ad06-8a79589e11ca",
+        "fromTable": "DimSuppliers",
+        "fromColumn": "PrimaryContactPersonKey",
+        "toTable": "DimPerson",
+        "toColumn": "PersonKey"
+      },
+      {
+        "name": "7ea9cd3c-bb44-40e6-a4a3-b54454433c36",
+        "fromTable": "FactPurchaseOrders",
+        "fromColumn": "ContactPersonKey",
+        "toTable": "DimPerson",
+        "toColumn": "PersonKey"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
